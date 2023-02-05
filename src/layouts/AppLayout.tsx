@@ -6,7 +6,7 @@ export function AppLayout() {
     <main className="w-screen h-screen flex justify-between">
       <Navbar />
 
-      <div className="w-full h-full flex grow">
+      <div className="w-full h-full flex grow items-start">
         <Outlet />
       </div>
     </main>

@@ -8,7 +8,7 @@ export function Navbar({}: NavbarProps) {
   return (
     <nav className="h-full flex flex-col w-60 bg-white shrink-0 border-r border-slate-100">
       <div className="flex flex-col p-5">
-        <h3 className="font-bold text-xl text-slate-800">Lighthouse</h3>
+        <h3 className="font-bold text-xl text-slate-800 flex items-center justify-between">Lighthouse <span className="text-xs p-1 px-2 leading-none rounded bg-yellow-500/10 text-yellow-500">Beta</span></h3>
         <span className="text-sm text-slate-500">A luz do Farol! 💡</span>
       </div>
 
