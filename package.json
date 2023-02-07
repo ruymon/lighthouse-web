@@ -11,9 +11,11 @@
   "dependencies": {
     "@layers.digital/layers-portal-sdk": "^1.0.21",
     "axios": "^1.3.2",
+    "date-fns": "^2.29.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
+    "react-modern-drawer": "^1.2.0",
     "react-router-dom": "^6.8.0"
   },
   "devDependencies": {

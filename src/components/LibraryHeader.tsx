@@ -16,7 +16,7 @@ export function LibraryHeader({ title, description, backgroundImage, location }:
         <p className="font-medium text-lg text-slate-500">{description}</p>
       </div>
 
-      <img src={lighthouse} alt="Lighthouse Illustration" className="absolute right-12 bottom-0 h-[calc(100%-15%)]"/>
+      <img src={lighthouse} alt="Lighthouse Illustration" className="absolute right-12 bottom-0 h-[calc(100%-15%)]" draggable="false"/>
     </header>
   );
 };

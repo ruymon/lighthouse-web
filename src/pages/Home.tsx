@@ -1,18 +1,27 @@
+import { useState } from 'react';
 import waveIllustration from '../assets/wave.png';
 import { EmojiBox } from '../components/EmojiBox';
 import { EventCard } from '../components/EventCard';
+import { EventDetailsDrawer } from '../components/EventDetailsDrawer';
 import { LibraryHeader } from '../components/LibraryHeader';
 import { events } from '../helpers/eventsHelper';
 
 export function Home() {
+  const [showDrawer, setShowDrawer] = useState(false);
+
   return (
-    <div className='w-full h-full flex flex-col gap-10'>
+    <div className='w-full h-full flex flex-col gap-10 relative'>
       <LibraryHeader
         title='Biblioteca Farol'
         description='Uma biblioteca de livros, artigos e vídeos sobre desenvolvimento de software.'
         backgroundImage='https://images.unsplash.com/photo-1499426703160-74a152c197b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8'
         location='Colégio Marista Arquidiocesano, São Paulo'
       />
+
+
+      <button type='button' onClick={() => setShowDrawer(!showDrawer)}>ABRIR</button>
+
+      <EventDetailsDrawer content={<h1>Hello World</h1>} isOpen={showDrawer} setIsOpen={setShowDrawer}/>
 
       <div className='w-full h-full flex flex-col gap-16 px-5'>
 
