@@ -14,7 +14,7 @@ export function NotFound() {
 
         <span className=" text-slate-500 text-lg w-3/4 leading-loose">Acredito que se perdemos em alto mar... A página que você requisitou não foi encontrada.</span>
         
-        <Link to="/" className="font-bold text-white px-8 py-3 bg-teal-500 rounded-md">Voltar</Link>
+        <Link to="/" className="font-bold text-white px-8 py-3 bg-teal-500 rounded-md hover:brightness-95 transition-all">Voltar</Link>
       </div>
     </main>
   );
