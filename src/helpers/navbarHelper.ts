@@ -25,7 +25,7 @@ export const adminNavbarItems: NavbarItem[] = [
   },
   {
     title: 'Gerenciar agenda',
-    href: '/admin/schedule',
+    href: '/admin/events',
   },
   {
     title: 'Avisos',

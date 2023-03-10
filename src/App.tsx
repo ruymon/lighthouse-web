@@ -1,8 +1,12 @@
 import { useEffect } from "react";
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { SideDrawerProvider } from "./contexts/SideDrawerContext";
+import { DrawerProvider } from "./contexts/DrawerContext";
 import { AppLayout } from "./layouts/AppLayout";
+import { ProtectedLayout } from "./layouts/ProtectedLayout";
+import { Announcements } from "./pages/admin/Announcements";
+import { Events } from "./pages/admin/Events";
+import { Overview } from "./pages/admin/Overview";
 import { Home } from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
 import { api, initializeAxios } from "./services/axiosService";
@@ -24,18 +28,25 @@ export function App() {
     initializeApp();
   }, []);
 
-  
+
   return (
     <BrowserRouter>
-      <SideDrawerProvider>
+      <DrawerProvider>
         <Routes>
           <Route path="/" element={<AppLayout />}>
             <Route index element={<Home />} />
+
+            {/* Protected Routes */}
+            <Route path="admin" element={<ProtectedLayout />}>
+              <Route path="overview" element={<Overview />} />
+              <Route path="announcements" element={<Announcements />} />
+              <Route path="events" element={<Events />} />
+            </Route>
           </Route>
 
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </SideDrawerProvider>
+      </DrawerProvider>
     </BrowserRouter>
   )
 }

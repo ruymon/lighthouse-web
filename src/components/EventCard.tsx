@@ -1,29 +1,20 @@
 import { format } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import { IEvent } from "../@types/events";
-import { useEventSidebar } from "../hooks/useEventSidebar";
+import { useDrawer } from "../hooks/useDrawer";
+import { EventDetails } from "./drawer/EventDetails";
 
 type EventCardProps = IEvent;
 
-export function EventCard({title, description, publishedDate, eventDate, location, eventBanner, speaker, speakerImage, tags}: EventCardProps) {
-  const { setContent, setIsOpen } = useEventSidebar();
+export function EventCard( event: EventCardProps) {
+  const { title, description, eventDate, publishedDate, tags, location, eventBanner, speaker, speakerImage } = event;
   const formattedDate = format(eventDate, 'PPp', { locale: ptBR });
+  const { openDrawer } = useDrawer();
 
   function handleSidebarDispatch() {
-    setContent({
-      title,
-      description,
-      eventDate,
-      publishedDate,
-      tags,
-      location,
-      eventBanner,
-      speaker,
-      speakerImage
-    });
-
-    setIsOpen(true);
+    openDrawer(<EventDetails content={event} />);
   }
+
 
   return (
     <button onClick={handleSidebarDispatch} type="button" className='text-left w-full min-h-32 flex flex-col gap-2 bg-slate-50 rounded-md'>
