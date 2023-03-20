@@ -34,15 +34,11 @@ export function Overview() {
         </div>
       </div>
 
-      <section className='w-full gap-4 flex flex-col'>
+      <section className='w-full gap-5 flex flex-col pb-8'>
         <OverviewEventCard />
         <OverviewEventCard />
         <OverviewEventCard />
-        
       </section>
-
-
-
     </main>
   );
 };
