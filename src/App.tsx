@@ -37,7 +37,7 @@ export function App() {
             <Route index element={<Home />} />
 
             {/* Protected Routes */}
-            <Route path="admin" element={<ProtectedLayout />}>
+            <Route path="/admin" element={<ProtectedLayout />}>
               <Route path="overview" element={<Overview />} />
               <Route path="announcements" element={<Announcements />} />
               <Route path="events" element={<Events />} />
